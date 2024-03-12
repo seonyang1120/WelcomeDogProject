@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> Item List </h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ItemNum</th>
+            <th>Name</th>
+            <th>Image</th>
+            <th>Info</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${allItem}">
+            <td th:text="${item.itemSeq}"></td>
+            <td th:text="${item.itemName}"></td>
+            <td th:text="${item.itemImg}"></td>
+            <td th:text="${item.itemInfo}"></td>
+        </tr>
+        </tbody>
+    </table>
+    <hr>
+    <h3> Add Item to My Cart </h3>
+    <form method="post" action="/cart/add" enctype="multipart/form-data">
+        MemberId : <input type="text" name="memberId"><br>
+        ItemName : <input type="text" name="itemName"><br>
+        CNT : <input type="number" name="cartItemCNT">
+        <button type="submit"> submit </button>
+    </form>
+    <br>
+    <div>
+        <a href="/"> Move to Home </a>
+    </div>
+</body>
+</html>

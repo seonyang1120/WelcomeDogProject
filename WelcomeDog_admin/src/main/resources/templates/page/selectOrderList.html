@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <div>
+        <h1> Order List </h1>
+        <table>
+            <thead>
+            <tr>
+                <th>OrderNum</th>
+                <th>Status</th>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Zipcode</th>
+                <th>Address</th>
+                <th>Tel</th>
+                <th>itemCNT</th>
+                <th>TotalPrice</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="order : ${allOrder}">
+                <td th:text="${order.orderSeq}"></td>
+                <td th:text="${order.status}"></td>
+                <td th:text="${order.date}"></td>
+                <td th:text="${order.name}"></td>
+                <td th:text="${order.zipcode}"></td>
+                <td th:text="${order.addr} + ${order.detailAddr}"></td>
+                <td th:text="${order.recipient_tel}"></td>
+                <td th:text="${order.itemCNT}"></td>
+                <td th:text="${order.totalPrice}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <hr>
+    <h2> Status Option : PREPARING, SHIPPING, COMPLETE </h2>
+    <div>
+        <form method="post" action="/admin/orderStatusUpdate" enctype="multipart/form-data">
+            OrderSeq : <input type="text" name="orderSeq"><br>
+            Status : <input type="text" name="status">
+            <button type="submit"> submit </button>
+        </form>
+    </div>
+    <br>
+    <div>
+        <a href="/"> Move to Home </a>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

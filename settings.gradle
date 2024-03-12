@@ -1,0 +1,4 @@
+rootProject.name = 'WelcomeDog'
+include 'WelcomeDog_admin'
+include 'WelcomeDog_core'
+include 'WelcomeDog_web'

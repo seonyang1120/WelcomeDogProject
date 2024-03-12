@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="container">
+    <div>
+        <h1> Item List </h1>
+        <table>
+            <thead>
+            <tr>
+                <th>ItemNum</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Info</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${allItem}">
+                <td th:text="${item.itemSeq}"></td>
+                <td th:text="${item.itemName}"></td>
+                <td th:text="${item.itemImg}"></td>
+                <td th:text="${item.price}"></td>
+                <td th:text="${item.itemInfo}"></td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+    </div>
+    <hr>
+    <h1> Add Item</h1>
+    <div>
+        <form method="post" action="/admin/addItem" enctype="multipart/form-data">
+            ItemName : <input type="text" name="itemName"><br>
+            ItemImg : <input type="text" name="itemImg"><br>
+            Price : <input type="text" name="price"><br>
+            ItemInfo : <input type="text" name="itemInfo">
+            <button type="submit"> submit </button>
+        </form>
+    </div>
+    <br>
+    <div>
+        <a href="/"> Move to Home </a>
+    </div>
+</div> <!-- /container -->
+</body>
+</html>

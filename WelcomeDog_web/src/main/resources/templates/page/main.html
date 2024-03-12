@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Main</title>
+</head>
+<body>
+<div class="container">
+  <div>
+    <h1>Main Page</h1>
+    <br>
+    <h3> Item List </h3>
+    <a href="../item/selectItemList"> Go to List </a>
+    <hr>
+    <h3> MyCart </h3>
+    <form action="/cart/myList" method="post">
+      memberId : <input type="text" name="memberId">
+      <button type="submit"> submit </button>
+    </form>
+    <!--<a href="orderList.html"> My Order </a>
+    <hr>
+    <a href="members/logout"> Logout </a>-->
+  </div>
+
+</div> <!-- /container -->
+</body>
+</html>
